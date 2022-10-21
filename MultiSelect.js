@@ -106,3 +106,43 @@ export default function MultipleSelect({
     </FormControl>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+import { FormControl, InputLabel, Select } from '@mui/material';
+
+export default function SelectMenu({
+  label,
+  open,
+  handleClose,
+  handleOpen,
+  year,
+  handleChange,
+  items,
+}) {
+  return (
+    <FormControl>
+      <InputLabel id='select-label'>{label}</InputLabel>
+      <Select
+        open={open}
+        onClose={handleClose}
+        onOpen={handleOpen}
+        value={year}
+        onChange={handleChange}
+        // input={<BootstrapInput />}
+        labelId='select-label'
+        label={label}
+      >
+        {items}
+      </Select>
+    </FormControl>
+  );
+}
